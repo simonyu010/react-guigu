@@ -11,43 +11,26 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
-class Person {
-    constructor(name, age) {
-        this.name = name
-        this.age = age
-    }
+let arr = [1,3,5,7,9];
+let result = arr.map((num) => {
+    return num+1;
+})
 
-    speak() {
-        console.log(`我叫${this.name}，我年龄是${this.age}`)
-    }
-}
+console.log(result);
 
-const p1 = new Person('Josh', 32)
-const p2 = new Person('Catelyn', 26)
+const data = ['Angfular', 'React', 'Vue'];
 
-console.log(p1);
-console.log(p2);
-p1.speak();
-p2.speak();
+const VDOM = (
+    <div>
+        <h1>React 102 title</h1>
+        <ul>
+            {
+                data.map((item, index)=>{
+                    return <li key={index}>{item}</li>
+                })
+            }
+        </ul>
+    </div>
+)
 
-class Student extends Person {
-    constructor(name, age, grade) {
-        super(name, age);
-        this.grade = grade;
-    }
-
-    elite() {
-        console.log(`我叫${this.name}，我年龄是${this.age}，我${this.grade}年级了`)
-    }
-
-    niubi() {
-        console.log('他们都不行');
-    }
-}
-
-const p3 = new Student('Simon', 37, 11)
-
-console.log(p3);
-p3.speak();
-p3.elite();
-p3.niubi();
+ReactDOM.render(VDOM, document.getElementById('test'));

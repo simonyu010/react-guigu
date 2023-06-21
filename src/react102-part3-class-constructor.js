@@ -29,25 +29,3 @@ console.log(p1);
 console.log(p2);
 p1.speak();
 p2.speak();
-
-class Student extends Person {
-    constructor(name, age, grade) {
-        super(name, age);
-        this.grade = grade;
-    }
-
-    elite() {
-        console.log(`我叫${this.name}，我年龄是${this.age}，我${this.grade}年级了`)
-    }
-
-    niubi() {
-        console.log('他们都不行');
-    }
-}
-
-const p3 = new Student('Simon', 37, 11)
-
-console.log(p3);
-p3.speak();
-p3.elite();
-p3.niubi();
